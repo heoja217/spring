@@ -17,7 +17,17 @@ update board set
   cre_dt=now()
 where bno > 0;
 
+CREATE TABLE board_log (
+  blno int(11) NOT NULL AUTO_INCREMENT,
+  bno int NOT NULL,
+  ipaddr varchar(255) NOT NULL,
+  command char(1) DEFAULT NULL,
+  cre_dt datetime NOT NULL,
+  PRIMARY KEY (blno)
+);
 
+alter table board
+  add column filepath VARCHAR(255) NULL;
 
 
 
